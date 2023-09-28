@@ -1,17 +1,19 @@
 {
     "compilerOptions": {
-      "target": "es2020",
+      "target": "es6",
       "strict": true,
       "preserveConstEnums": true,
       "noEmit": true,
-      "sourceMap": false,
+      "sourceMap": true,
       "module":"commonjs",
       "moduleResolution":"node",
       "esModuleInterop": true, 
       "skipLibCheck": true,
       "forceConsistentCasingInFileNames": true,
-      "rootDir": "./src"
+      "rootDir": "./src",
+      "outDir": "build",
+      // "outFile": "index.js"
     },
     "include": ["src/**/*.ts", "src/**/*.js"],
-    "exclude": ["node_modules"]
+    "exclude": ["node_modules", "**/*.test.ts"]
   }

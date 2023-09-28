@@ -4,6 +4,7 @@
   "description": "github action CI/CD",
   "scripts": {
     "start:dev": "nodemon src/index.ts",
+    "build": "tsc",
     "test": "jest"
   },
   "repository": {
