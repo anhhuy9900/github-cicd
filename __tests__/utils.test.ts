@@ -10,8 +10,7 @@ describe('TESTING UTILS FUNCTIONS', () => {
 
     it('toUppercase => Should return a string has been uppercase', () => {
         const str = toUppercase('uppercase words');
-        //expect(str).not.toBeNull();
-        expect(str).toBeNull();
+        expect(str).not.toBeNull();
         expect(str).not.toBe(undefined);
         expect(str).toEqual('UPPERCASE WORDS');
     })
