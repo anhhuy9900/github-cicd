@@ -11,6 +11,7 @@ jobs:
       - name: Lint
         run: npm run lint
   test:
+    needs: lint #this is next step after lint step has finished
     runs-on: ubuntu-latest
     steps:
       - name: Get code
@@ -24,7 +25,7 @@ jobs:
       - name: Run test
         run: npm run test
   deploy:
-    needs: test #there is element used to dependency step in build action
+    needs: test #this is next step after test step has finished
     runs-on: ubuntu-latest
     steps:
       - name: Get code
