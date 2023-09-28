@@ -1,0 +1,32 @@
+name: Deploy resource depend on actions
+on: 
+  pull_request:
+    types:
+      - closed
+    branches:
+      - master # only branch master allow run actions
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+      - 'dev-*' # dev-new dev-this-is-new
+    paths-ignore:
+      - "../../src/ignore"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get code
+        uses: actions/checkout@v3
+      - name: Install Nodejs
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Install dependencies
+        run: npm ci
+      - name: Run test
+        run: npm run test
+      - name: Build project
+        run: npm run build
+      - name: Deploy project
+        run: echo "Deploy project ..."
