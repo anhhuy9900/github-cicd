@@ -4,7 +4,7 @@ on:
     types:
       - closed
     branches:
-      - main # only branch main allow run actions
+      - master # only branch master allow run actions
   workflow_dispatch:
   push:
     branches:
