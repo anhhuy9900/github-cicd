@@ -5,12 +5,13 @@ on:
       - closed
     branches:
       - master # only branch master allow run actions
-  push:
-    branches:
-      - dev
-      - 'dev-*' # dev-new dev-this-is-new
-    paths-ignore:
-      - 'src/ignore/*'
+  # workflow_dispatch:
+  # push:
+  #   branches:
+  #     - dev
+  #     - 'dev-*' # dev-new dev-this-is-new
+  #   paths-ignore:
+  #     - 'src/ignore/*'
 jobs:
   deploy:
     runs-on: ubuntu-latest
