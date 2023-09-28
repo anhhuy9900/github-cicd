@@ -11,7 +11,7 @@ on:
       - dev
       - 'dev-*' # dev-new dev-this-is-new
     paths-ignore:
-      - "../../src/ignore/*"
+      - "src/ignore/*"
 jobs:
   deploy:
     runs-on: ubuntu-latest
